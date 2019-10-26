@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Numerics;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DigitalMusicAnalysis
 {
@@ -43,6 +47,12 @@ namespace DigitalMusicAnalysis
 
             int cols = 2 * nearest /wSamp;
 
+            // Overhead too large to make parallel viable
+            //Parallel.For(0, wSamp / 2, jj =>
+            //{
+            //    timeFreqData[jj] = new float[cols];
+            //});
+
             for (int jj = 0; jj < wSamp / 2; jj++)
             {
                 timeFreqData[jj] = new float[cols];
@@ -54,34 +64,100 @@ namespace DigitalMusicAnalysis
 
         float[][] stft(Complex[] x, int wSamp)
         {
-            int ii = 0;
-            int jj = 0;
-            int kk = 0;
-            int ll = 0;
             int N = x.Length;
             float fftMax = 0;
             
             float[][] Y = new float[wSamp / 2][];
 
-            for (ll = 0; ll < wSamp / 2; ll++)
+            //Overhead too great, original execution more effective
+            //Parallel.For(0, wSamp / 2, ll =>
+            //{
+            //   Y[ll] = new float[2 * (int)Math.Floor((double)N / (double)wSamp)];
+            //});
+
+            for (int ll = 0; ll < wSamp / 2; ll++)
             {
                 Y[ll] = new float[2 * (int)Math.Floor((double)N / (double)wSamp)];
             }
-            
+
             Complex[] temp = new Complex[wSamp];
             Complex[] tempFFT = new Complex[wSamp];
 
-            for (ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
-            {
+            //List<float> threadMaxes = new List<float>();
+            //float fftMax_thread = 0;
 
-                for (jj = 0; jj < wSamp; jj++)
+            //Parallel.For(0, numThreads, iterator =>
+            //{
+            //    int guard = 2 * (int)Math.Floor(N / (double)wSamp) - 1;
+            //    int chunk_size = (guard + (numThreads - 1)) / numThreads;
+            //    int start = chunk_size * iterator;
+            //    int end = Math.Min(start + chunk_size, guard);
+
+            //    Debug.WriteLine("\n \nStart chunk: " + start + "\n  End chunk: " + end);
+
+            //    for (int ii = start; ii < end; ii++)
+            //    {
+            //        for (int jj = 0; jj < wSamp; jj++)
+            //        {
+            //            temp[jj] = x[ii * (wSamp / 2) + jj];
+            //        }
+
+            //        tempFFT = fft(temp);
+
+            //        for (int kk = 0; kk < wSamp / 2; kk++)
+            //        {
+            //            Y[kk][ii] = (float)Complex.Abs(tempFFT[kk]);
+
+            //            if (Y[kk][ii] > fftMax_thread)
+            //            {
+            //                fftMax_thread = Y[kk][ii];
+            //            }
+            //        }
+            //    }
+            //    Debug.WriteLine(fftMax_thread + "\n");
+            //    threadMaxes.Add(fftMax_thread);
+            //});
+
+            //Debug.WriteLine("Max value: " + threadMaxes.Max());
+            //fftMax = threadMaxes.Max();
+
+            //////////////////////////////////////////////////////////////////////////////////////////////
+
+            //Parallel.For(0, (int)(2 * Math.Floor(N / (double)wSamp) - 1), ii =>
+            //{
+            //    for (int jj = 0; jj < wSamp; jj++)
+            //    {
+            //        temp[jj] = x[ii * (wSamp / 2) + jj];
+            //    }
+
+            //    tempFFT = fft(temp);
+
+            //    for (int kk = 0; kk < wSamp / 2; kk++)
+            //    {
+            //        Y[kk][ii] = (float)Complex.Abs(tempFFT[kk]);
+
+            //        if (Y[kk][ii] > fftMax)
+            //        {
+            //            fftMax = Y[kk][ii];
+            //        }
+            //    }
+            //}
+            //);
+
+            //Debug.WriteLine("\n\n fftMax: " + fftMax);
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+
+            for (int ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
+            {
+                for (int jj = 0; jj < wSamp; jj++)
                 {
                     temp[jj] = x[ii * (wSamp / 2) + jj];
                 }
 
                 tempFFT = fft(temp);
 
-                for (kk = 0; kk < wSamp / 2; kk++)
+                for (int kk = 0; kk < wSamp / 2; kk++)
                 {
                     Y[kk][ii] = (float)Complex.Abs(tempFFT[kk]);
 
@@ -90,17 +166,18 @@ namespace DigitalMusicAnalysis
                         fftMax = Y[kk][ii];
                     }
                 }
-
-
             }
 
-            for (ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
+
+
+            for (int ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
             {
-                for (kk = 0; kk < wSamp / 2; kk++)
+                for (int kk = 0; kk < wSamp / 2; kk++)
                 {
                     Y[kk][ii] /= fftMax;
                 }
             }
+
 
             return Y;
         }

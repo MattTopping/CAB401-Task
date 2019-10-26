@@ -1,0 +1,17 @@
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis.csprojAssemblyReference.cache
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\MainWindow.g.cs
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\App.g.cs
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis_MarkupCompile.cache
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis_MarkupCompile.lref
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\bin\Debug\DigitalMusicAnalysis.exe.config
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\bin\Debug\DigitalMusicAnalysis.exe
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\bin\Debug\DigitalMusicAnalysis.pdb
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\bin\Debug\NAudio.dll
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\bin\Debug\NAudio.xml
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\MainWindow.baml
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis.g.resources
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis.Properties.Resources.resources
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis.csproj.GenerateResource.cache
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis.csproj.CopyComplete
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis.exe
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\DigitalMusicAnalysisSeq\obj\Debug\DigitalMusicAnalysis.pdb

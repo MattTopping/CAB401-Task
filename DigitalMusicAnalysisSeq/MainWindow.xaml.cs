@@ -35,9 +35,9 @@ namespace DigitalMusicAnalysis
             string xmlfile = openFile("Select Score (xml) file");
             Thread check = new Thread(new ThreadStart(updateSlider));
             loadWave(filename);
-            freqDomain();
+            freqDomain(); //Transforms
             sheetmusic = readXML(xmlfile);
-            onsetDetection();
+            onsetDetection(); // Detection of new note
             loadImage();
             loadHistogram();
             playBack();
@@ -274,6 +274,7 @@ namespace DigitalMusicAnalysis
         }
 
         // Onset Detection function - Determines Start and Finish times of a note and the frequency of the note over each duration.
+
 
         private void onsetDetection()
         {
@@ -1106,6 +1107,8 @@ namespace DigitalMusicAnalysis
 
             System.Console.Out.Write(AlignA + "\n");
             System.Console.Out.Write(AlignB + "\n");
+
+            System.Console.Out.Write("\n\n");
 
             string[] returnArray = new string[2];
 
