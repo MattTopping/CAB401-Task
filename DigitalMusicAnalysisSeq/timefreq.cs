@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using System.Threading.Tasks;
 
 namespace DigitalMusicAnalysis
 {
@@ -54,16 +55,12 @@ namespace DigitalMusicAnalysis
 
         float[][] stft(Complex[] x, int wSamp)
         {
-            int ii = 0;
-            int jj = 0;
-            int kk = 0;
-            int ll = 0;
             int N = x.Length;
             float fftMax = 0;
             
             float[][] Y = new float[wSamp / 2][];
 
-            for (ll = 0; ll < wSamp / 2; ll++)
+            for (int ll = 0; ll < wSamp / 2; ll++)
             {
                 Y[ll] = new float[2 * (int)Math.Floor((double)N / (double)wSamp)];
             }
@@ -71,17 +68,17 @@ namespace DigitalMusicAnalysis
             Complex[] temp = new Complex[wSamp];
             Complex[] tempFFT = new Complex[wSamp];
 
-            for (ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
+            for (int ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
             {
 
-                for (jj = 0; jj < wSamp; jj++)
+                for (int jj = 0; jj < wSamp; jj++)
                 {
                     temp[jj] = x[ii * (wSamp / 2) + jj];
                 }
 
                 tempFFT = fft(temp);
 
-                for (kk = 0; kk < wSamp / 2; kk++)
+                for (int kk = 0; kk < wSamp / 2; kk++)
                 {
                     Y[kk][ii] = (float)Complex.Abs(tempFFT[kk]);
 
@@ -94,9 +91,9 @@ namespace DigitalMusicAnalysis
 
             }
 
-            for (ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
+            for (int ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
             {
-                for (kk = 0; kk < wSamp / 2; kk++)
+                for (int kk = 0; kk < wSamp / 2; kk++)
                 {
                     Y[kk][ii] /= fftMax;
                 }

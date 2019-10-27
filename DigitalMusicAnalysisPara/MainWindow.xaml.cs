@@ -28,7 +28,7 @@ namespace DigitalMusicAnalysis
         private enum pitchConv { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B };
         private double bpm = 70;
 
-        private int NUM_THREADS_USED = 8;
+        //private int NUM_THREADS_USED = 8;
 
         public MainWindow()
         {
@@ -329,9 +329,9 @@ namespace DigitalMusicAnalysis
             HFC = new float[stftRep.timeFreqData[0].Length];
 
             // Original and Chunked are slower
-
             //int N = stftRep.timeFreqData[0].Length;
-            //Parallel.For(0, N, threadNum =>
+
+            //Parallel.For(0, N, NUM_THREADS_USED =>
             //{
             //    int chunk_size = (N + (NUM_THREADS_USED - 1)) / NUM_THREADS_USED;
             //    int start = chunk_size * threadNum;
@@ -343,7 +343,6 @@ namespace DigitalMusicAnalysis
             //        {
             //            HFC[jj] = HFC[jj] + (float)Math.Pow((double)stftRep.timeFreqData[ii][jj] * ii, 2);
             //        }
-
             //    }
             //});
 
@@ -353,7 +352,6 @@ namespace DigitalMusicAnalysis
             //    {
             //        HFC[jj] = HFC[jj] + (float)Math.Pow((double)stftRep.timeFreqData[ii][jj] * ii, 2);
             //    }
-
             //}
 
             Parallel.For(0, stftRep.timeFreqData[0].Length, jj =>
@@ -397,10 +395,7 @@ namespace DigitalMusicAnalysis
                 noteStops.Add(waveIn.data.Length);
             }
 
-
-            // DETERMINES START AND FINISH TIME OF NOTES BASED ON ONSET DETECTION       
-
-            ///*
+            // DETERMINES START AND FINISH TIME OF NOTES BASED ON ONSET DETECTION
 
             for (int ii = 0; ii < noteStops.Count; ii++)
             {
