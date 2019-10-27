@@ -50,7 +50,7 @@ namespace DigitalMusicAnalysis
 
             int cols = 2 * nearest /wSamp;
 
-            // Overhead too large to make parallel viable
+            //Overhead too great, original execution more effective
             //Parallel.For(0, wSamp / 2, jj =>
             //{
             //    timeFreqData[jj] = new float[cols];
@@ -83,25 +83,14 @@ namespace DigitalMusicAnalysis
                 Y[ll] = new float[2 * (int)Math.Floor((double)N / (double)wSamp)];
             }
 
-            //for (int ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
-            //{
-            //    for (int jj = 0; jj < wSamp; jj++)
-            //    {
-            //        temp[jj] = x[ii * (wSamp / 2) + jj];
-            //    }
+            ////////////////////////////////////////////////////////////////////////
+            ///                       Parallel Section                           ///
+            ////////////////////////////////////////////////////////////////////////
 
-            //    tempFFT = fft(temp);
+            //Parallelised Below
 
-            //    for (int kk = 0; kk < wSamp / 2; kk++)
-            //    {
-            //        Y[kk][ii] = (float)Complex.Abs(tempFFT[kk]);
-
-            //        if (Y[kk][ii] > fftMax)
-            //        {
-            //            fftMax = Y[kk][ii];
-            //        }
-            //    }
-            //}
+            // Data Restructuring Seq won't work here anymore
+            // Reduction required thus, explict declaration 
 
             List<float> threadMaxes = new List<float>();
             float fftMax_thread = 0;
@@ -111,10 +100,10 @@ namespace DigitalMusicAnalysis
                 Complex[] temp = new Complex[wSamp];
                 Complex[] tempFFT = new Complex[wSamp];
 
-                int guard = 2 * (int)Math.Floor(N / (double)wSamp) - 1;
-                int chunk_size = (guard + (NUM_THREADS_USED - 1)) / NUM_THREADS_USED;
-                int start = chunk_size * iterator;
-                int end = Math.Min(start + chunk_size, guard);
+                int guardSize = 2 * (int)Math.Floor(N / (double)wSamp) - 1;
+                int chunkSize = (guardSize + (NUM_THREADS_USED - 1)) / NUM_THREADS_USED;
+                int start = chunkSize * iterator;
+                int end = Math.Min(start + chunkSize, guardSize);
 
                 for (int ii = start; ii < end; ii++)
                 {
@@ -140,36 +129,15 @@ namespace DigitalMusicAnalysis
 
             fftMax = threadMaxes.Max();
 
-            //Parallelised Above
+            ////////////////////////////// ~ END ~ /////////////////////////////////
 
-            //for (int ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
-            //{
-            //    for (int jj = 0; jj < wSamp; jj++)
-            //    {
-            //        temp[jj] = x[ii * (wSamp / 2) + jj];
-            //    }
 
-            //    tempFFT = fft(temp);
 
-            //    for (int kk = 0; kk < wSamp / 2; kk++)
-            //    {
-            //        Y[kk][ii] = (float)Complex.Abs(tempFFT[kk]);
+            ////////////////////////////////////////////////////////////////////////
+            ///                       Parallel Section                           ///
+            ////////////////////////////////////////////////////////////////////////
 
-            //        if (Y[kk][ii] > fftMax)
-            //        {
-            //            fftMax = Y[kk][ii];
-            //        }
-            //    }
-            //}
-
-            Parallel.For(0, 2 * (int)Math.Floor((double)N / (double)wSamp) - 1, ii =>
-            {
-                for (int kk = 0; kk < wSamp / 2; kk++)
-                {
-                    Y[kk][ii] /= fftMax;
-                }
-            }
-            );
+            //Parallelised Below
 
             //for (int ii = 0; ii < 2 * Math.Floor((double)N / (double)wSamp) - 1; ii++)
             //{
@@ -179,6 +147,31 @@ namespace DigitalMusicAnalysis
             //    }
             //}
 
+            //Parallel.For(0, NUM_THREADS_USED, iterator =>
+            //{
+            //    int guardSize = 2 * (int)Math.Floor(N / (double)wSamp) - 1;
+            //    int chunkSize = (guardSize + (NUM_THREADS_USED - 1)) / NUM_THREADS_USED;
+            //    int start = chunkSize * iterator;
+            //    int end = Math.Min(start + chunkSize, guardSize);
+
+            //    for (int ii = start; ii < end; ii++)
+            //    {
+            //        for (int kk = 0; kk < wSamp / 2; kk++)
+            //        {
+            //            Y[kk][ii] /= fftMax;
+            //        }
+            //    }
+            //});
+
+            Parallel.For(0, 2 * (int)Math.Floor((double)N / (double)wSamp) - 1, ii =>
+            {
+                for (int kk = 0; kk < wSamp / 2; kk++)
+                {
+                    Y[kk][ii] /= fftMax;
+                }
+            });
+
+            ////////////////////////////// ~ END ~ /////////////////////////////////
 
             return Y;
         }

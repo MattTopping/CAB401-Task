@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DigitalMusicAnalysisPara"
+    "\\Timing",
+    "\\Timing\\DigitalMusicAnalysisPara",
+    "\\Timing\\DigitalMusicAnalysisParaChunked"
   ],
-  "SelectedNode": "\\DigitalMusicAnalysisPara\\DigitalMusicAnalysis.sln",
+  "SelectedNode": "\\Timing\\DigitalMusicAnalysisParaChunked\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

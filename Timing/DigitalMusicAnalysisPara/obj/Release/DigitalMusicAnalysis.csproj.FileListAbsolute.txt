@@ -1,0 +1,17 @@
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\bin\Release\DigitalMusicAnalysis.exe.config
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\bin\Release\DigitalMusicAnalysis.exe
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\bin\Release\DigitalMusicAnalysis.pdb
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\bin\Release\NAudio.dll
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\bin\Release\NAudio.xml
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\MainWindow.g.cs
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\App.g.cs
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis_MarkupCompile.cache
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis_MarkupCompile.lref
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\MainWindow.baml
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis.g.resources
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis.Properties.Resources.resources
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis.csproj.GenerateResource.cache
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis.csproj.CopyComplete
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis.exe
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis.pdb
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisPara\obj\Release\DigitalMusicAnalysis.csprojAssemblyReference.cache

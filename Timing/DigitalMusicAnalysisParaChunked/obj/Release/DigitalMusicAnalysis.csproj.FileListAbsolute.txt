@@ -1,0 +1,17 @@
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\bin\Release\DigitalMusicAnalysis.exe.config
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\bin\Release\DigitalMusicAnalysis.exe
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\bin\Release\DigitalMusicAnalysis.pdb
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\bin\Release\NAudio.dll
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\bin\Release\NAudio.xml
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis.csprojAssemblyReference.cache
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\MainWindow.g.cs
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\App.g.cs
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis_MarkupCompile.cache
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis_MarkupCompile.lref
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\MainWindow.baml
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis.g.resources
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis.Properties.Resources.resources
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis.csproj.GenerateResource.cache
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis.csproj.CopyComplete
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis.exe
+C:\Users\Toppi\Documents\GitHub\CAB401-Task\Timing\DigitalMusicAnalysisParaChunked\obj\Release\DigitalMusicAnalysis.pdb
